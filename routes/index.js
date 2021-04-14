@@ -4,7 +4,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', author: 'Armando Valencia', appName: 'WebApp' });
+  res.render('index', { title: 'Express', author: 'Armando Valencia', 
+  appName: 'WebApp', company: 'Awsome' });
 });
 
 /*Agregando nueva ruta
