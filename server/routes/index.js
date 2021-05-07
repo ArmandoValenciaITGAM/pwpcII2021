@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', author: 'Armando Valencia', 
+  res.render('index', { title: 'Express', author: 'Steve Jobs', 
   appName: 'WebApp', company: 'Awsome' });
 });
 
