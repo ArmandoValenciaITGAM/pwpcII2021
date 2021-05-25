@@ -1,0 +1,2 @@
+#ignorar los archivos de configuración
+*.config.js
