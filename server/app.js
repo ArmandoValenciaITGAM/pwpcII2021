@@ -36,7 +36,8 @@ if(env === 'development'){
   // Reload=true: Habilita la recarga del frontend cuando hay cambios en el codigo
   // fuente del frontend
   // timeout=1000: Tiempo de espera entre recarga y recarga de la pagina
-  webpackConfig.entry = ['webpack-hot-middleware/client?reload=true&timeout=1000', webpackConfig.entry];
+  webpackConfig.entry = ['webpack-hot-middleware/client?reload=true&timeout=1000', 
+  webpackConfig.entry];
 
   // Paso 2. Agregamos el plugin
   webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
