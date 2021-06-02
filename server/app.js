@@ -17,6 +17,9 @@ import logger from 'morgan';
 import indexRouter from '@s-routes/index';
 import usersRouter from '@s-routes/users';
 
+// Importing configurations
+import configTemplateEngine from '@s-config/template-engine';
+
 // Webpack Modules
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
@@ -62,8 +65,7 @@ if (env === 'development') {
 }
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+configTemplateEngine(app);
 // Middlewares
 app.use(logger('dev'));
 app.use(express.json());
