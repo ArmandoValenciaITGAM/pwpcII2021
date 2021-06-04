@@ -9,7 +9,8 @@ import createError from 'http-errors';
 import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
-import logger from 'morgan';
+import morgan from 'morgan';
+import winston from 'winston';
 
 // Enrutamiento
 // var indexRouter = require('./routes/index');
@@ -67,7 +68,7 @@ if (env === 'development') {
 // view engine setup
 configTemplateEngine(app);
 // Middlewares
-app.use(logger('dev'));
+app.use(morgan('combined', { stream: winston.stream }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
