@@ -8,6 +8,7 @@
     "w:s": "NODE_ENV=development webpack serve --config ./webpack.dev.config.js --mode development",
     "cleans": "rimraf dist-server",
     "cleanc": "rimraf public/js",
+    "cleanlogs":"rimraf ./server/logs/*.log",
     "b:s": "npm run cleans && babel ./server --out-dir dist-server --copy-files",
     "b:c": "npm run cleanc && webpack --config ./webpack.config.js --mode production",
     "build": "npm run b:c && npm run b:s"

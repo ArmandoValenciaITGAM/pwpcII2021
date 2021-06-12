@@ -1,26 +1,31 @@
-var express = require('express');
-const { route } = require('./users');
-var router = express.Router();
+// Importando el router de home
+import homeRouter from './home';
+// Importando router de users
+import userRouter from './user';
+
+// const { route } = require('./users');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', author: 'Steve Jobs', 
-  appName: 'WebApp', company: 'Awsome' });
-});
+// router.use('/', homeRouter);
+// router.use('/user', userRouter);
 
-/*Agregando nueva ruta
+// Agregando las rutas a la aplicación
+const addRoutes = (app) => {
+  app.use('/', homeRouter);
+  app.use('/user', userRouter);
+  return app;
+};
+
+export default {
+  addRoutes,
+};
+
+/* Agregando nueva ruta
 router.get('/greeting', function(req, res, next){
   res.send('Hola Campeon de la Fullstack Web');
-}); //callback="Te llamo despues"*/
+}); //callback="Te llamo despues" */
 
-/*Agregando nueva ruta*/
-router.get('/greeting', function(req, res, next){
-  res.status(200).json({message: 'Hola Campeón de la Fullstack Web'});
-});
-
-/*Mi Ruta Nueva*/
-router.get('/holamundo', function(req, res, next){
-  res.send('Hola, esta es mi ruta nueva, hola mundo');
-});
-
-module.exports = router;
+// /*Mi Ruta Nueva*/
+// router.get('/holamundo', function(req, res, next){
+//   res.send('Hola, esta es mi ruta nueva, hola mundo');
+// });

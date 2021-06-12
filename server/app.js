@@ -15,8 +15,8 @@ import winston from '@server/config/winston';
 // Enrutamiento
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
-import indexRouter from '@s-routes/index';
-import usersRouter from '@s-routes/users';
+// Importando el router principal
+import router from '@server/routes/index';
 
 // Importing configurations
 import configTemplateEngine from '@s-config/template-engine';
@@ -86,8 +86,9 @@ app.use(express.static(path.join(__dirname, '..', 'public'))); // app.use(expres
 //   }
 // ); // Tambien es posible utilizar GET en vez de USE
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// Instalando el enrutador principal a
+// la aplicación express
+router.addRoutes(app);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
